@@ -10,7 +10,7 @@ function UserList() {
     }, [])
     let fetchUsers = async()=>{
         try {
-            let userData = await axios.get("https://node-react-trial.herokuapp.com/users")
+            let userData = await axios.get("https://nodetrialnew.herokuapp.com/users")
             setUserList(userData.data)
         } catch (error) {
             console.log('error')
@@ -18,7 +18,7 @@ function UserList() {
     }
     let handleDelete = async (_id) =>{
     try {
-        await axios.delete(`https://node-react-trial.herokuapp.com/user/${_id}`)
+        await axios.delete(`https://nodetrialnew.herokuapp.com/user/${_id}`)
         alert('userdeleted')
         fetchUsers()
     }
