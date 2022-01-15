@@ -7,7 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 function EditUser() {
     let params = useParams()
     useEffect(async() => {
-       let userData = await axios.get(`https://node-react-trial.herokuapp.com/user/${params.id}`)
+       let userData = await axios.get(`https://nodetrialnew.herokuapp.com/user/${params.id}`)
         formik.setValues(userData.data)
     },[])
 
@@ -21,7 +21,7 @@ function EditUser() {
         onSubmit: async (values)=> {
            try {
               
-           await axios.put(`https://node-react-trial.herokuapp.com/users/${params.id}`,values)
+           await axios.put(`https://nodetrialnew.herokuapp.com/users/${params.id}`,values)
             navigate('/')
            }
             catch (error) {
